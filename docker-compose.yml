@@ -1,0 +1,32 @@
+# docker-compose up --build -d
+services:
+  autos.api:
+    build:
+      context: .
+      dockerfile: Autos.Api/Dockerfile
+    image: ${DOCKER_REGISTRY-}autosapi
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+      - ASPNETCORE_ENVIRONMENT=Development
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - ConnectionStrings__dockerContainerAutosDb=Host=postgresdb;Port=5432;Database=AutosDb;Username=autosuser;Password=autospassword;
+    depends_on:
+      - postgresdb
+  postgresdb:
+    image: postgres
+    container_name: postgresdb
+    environment:
+      POSTGRES_DB: AutosDb
+      POSTGRES_USER: autosuser
+      POSTGRES_PASSWORD: autospassword
+    ports:
+      - "5432:5432"
+    volumes:
+        - local_pgdata:/var/lib/postgresql/data
+networks:
+  default:
+    name: my_network
+volumes:
+  local_pgdata:

@@ -1,0 +1,74 @@
+# ==============================
+# Visual Studio / Rider / VS Code
+# ==============================
+.vscode/
+*.code-workspace
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ==============================
+# Build / Bin / Obj
+# ==============================
+bin/
+obj/
+out/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# ==============================
+# .NET / EF Core
+# ==============================
+*.db
+*.db-journal
+*.sqlite
+*.mdf
+*.ldf
+
+# ==============================
+# Docker
+# ==============================
+docker-compose.override.yml
+.env
+*.env
+*.dockerfile
+**/Dockerfile.*
+
+# ==============================
+# PostgreSQL / Database
+# ==============================
+*.sql
+*.backup
+
+# ==============================
+# Test results / Coverage
+# ==============================
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.vsmdi
+
+# ==============================
+# Rider / JetBrains
+# ==============================
+.idea/
+
+# ==============================
+# OS generated
+# ==============================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==============================
+# Logs
+# ==============================
+logs/
+*.log
+.vs/
